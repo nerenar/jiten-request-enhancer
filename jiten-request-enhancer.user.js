@@ -2,7 +2,7 @@
 // @name         Jiten Request Enhancer
 // @namespace    https://github.com/nerenar/jiten-request-enhancer
 // @license      MIT
-// @version      0.1.0
+// @version      0.1.1
 // @description  Autofill Japanese titles from database URLs and search VNDB/AniList/MyAnimeList/Syosetu from the Jiten request form.
 // @match        https://jiten.moe/*
 // @run-at       document-idle
