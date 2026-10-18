@@ -742,6 +742,7 @@
         }
         setStatus(urlStatus, '');
         delete form.title.dataset.jreFilled;
+        delete form.url.dataset.jreFilled;
         lastFilledUrl = null;
         if (autoType && currentMediaType(form) === autoType) await clearMediaType(form);
         autoType = null;
@@ -749,6 +750,8 @@
       }
       if (!hit) { setStatus(urlStatus, ''); return; }
       if (raw === lastFilledUrl) return;
+      // Another script filled this link together with its title: no lookup until the link changes.
+      if (form.url.dataset.jreFilled === raw) { lastFilledUrl = raw; return; }
       const ctrl = new AbortController();
       urlAbort = ctrl;
       setStatus(urlStatus, '');
